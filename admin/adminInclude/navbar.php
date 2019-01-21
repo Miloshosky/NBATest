@@ -1,9 +1,11 @@
+<?php
 
+?>
   <body id="page-top">
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Home</a>
+      <a class="navbar-brand mr-1" href="../view/index.php">Home</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -55,7 +57,7 @@
             <a class="dropdown-item" href="#">Settings</a>
             <a class="dropdown-item" href="#">Activity Log</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
           </div>
         </li>
       </ul>
@@ -77,19 +79,14 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Login Screens:</h6>
-            <a class="dropdown-item" href="../view/login.html">Login</a>
-            <a class="dropdown-item" href="../view/register.html">Register</a>
+            <a class="dropdown-item" href="../view/login.php">Login</a>
+            <a class="dropdown-item" href="../view/register.php">Register</a>
             <a class="dropdown-item" href="view/forgot-password.html">Forgot Password</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Other Pages:</h6>
             <a class="dropdown-item" href="../view/404.html">404 Page</a>
             <a class="dropdown-item" href="../view/blank.html">Blank Page</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../view/tables.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../view/players.php">

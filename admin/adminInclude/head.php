@@ -5,7 +5,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>NBA Admin - Dashboard</title>
+
+    <title>NBA Admin</title>
 
     <!-- Bootstrap core CSS-->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
