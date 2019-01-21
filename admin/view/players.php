@@ -48,6 +48,8 @@
                       <th>Weight <i>(kg)</i></th>
                       <th>Number</th>
                       <th>Position</th>
+                      <th>Team</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot class="thead-dark">
@@ -59,6 +61,8 @@
                       <th>Weight <i>(kg)</i></th>
                       <th>Number</th>
                       <th>Position</th>
+                      <th>Team</th>
+                      <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -66,7 +70,7 @@
 
                       try
                       {
-                        $selPlayer = $db->query('SELECT * FROM players ORDER BY playerLastName');
+                        $selPlayer = $db->query('SELECT players.*, teams.teamID, teams.teamName FROM players RIGHT JOIN teams ON players.ptID = teams.teamID ORDER BY players.playerLastName');
                        
 
                         while($row = $selPlayer->fetch())
@@ -92,6 +96,12 @@
                             default:
                             echo '<td>N/A</td>';
                           }
+                          echo '<td>' . $row['teamName'] . '</td>';
+                          ?>
+                          <td>
+                          <a href="../mod/editPlayer.php?id=<?php echo $row['playerID'];?>"><i class="fa fa-address-card"></i></a> | <a href="delete.php?id=<?php echo $row['playerID'];?>"><i class="fa fa-user-times"></i></a>
+                          </td>
+                          <?php
                           echo '</tr>';
                       
                         }
@@ -131,6 +141,7 @@
 
     </div>
     <!-- /#wrapper -->
+    
 <?php
   include('../adminInclude/footer.php');
 ?>

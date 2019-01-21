@@ -76,7 +76,7 @@
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                  <thead class="thead-dark">
                     <tr>
                       <th>Last Name</th>
                       <th>First Name</th>
@@ -89,7 +89,7 @@
                       <th>Team</th>
                     </tr>
                   </thead>
-                  <tfoot>
+                  <tfoot class="thead-dark">
                     <tr>
                       <th>Last Name</th>
                       <th>First Name</th>
@@ -105,8 +105,8 @@
                   <tbody>
                     
                     <?php
-
-                      $selPlayer = $db->query('SELECT * FROM players ORDER BY playerLastName');
+                      $selPlayer = $db->query('SELECT players.*, teams.teamID, teams.teamName FROM players RIGHT JOIN teams ON players.ptID = teams.teamID ORDER BY players.playerLastName');
+                       
                       while($row = $selPlayer->fetch())
                       {
                         echo '<tr>';
@@ -136,10 +136,11 @@
                             break;
                             default:
                             echo '<td>N/A</td>';
-                          }
-                        //echo '<td>' . $row['team'] . '</td>';
-                        echo '</tr>';
+                          }                
+                          echo '<td>' . $row['teamName'] . '</td>';     
+                          echo '</tr>';   
                       }
+                      
 
                     ?>
 
