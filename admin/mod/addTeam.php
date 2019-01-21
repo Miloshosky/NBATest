@@ -14,10 +14,12 @@
 		{
 			try
 			{
-				$selTeam = $db->prepare("INSERT INTO teams (teamName) VALUES (:teamName)");
+				$selTeam = $db->prepare("INSERT INTO teams (teamName, teamShortName) VALUES (:teamName, :shortName)");
 				$selTeam->execute(array(
-					':teamName' => $teamName
+					':teamName' => $teamName,
+					':shortName' => $tsNamell
 				));
+				$row = $selTeam->fetch();
 			header('Location: ../view/teams.php');
 			exit;
 			}
@@ -59,6 +61,7 @@
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<input type="text" placeholder="Team Name" class="form-control" name='teamName' required value='<?php if(isset($error)) {echo $_POST['teamName'];} ?>'>
+								<input type="text" placeholder="Short Name" class="form-control" name='tsName' required value='<?php if(isset($error)) {echo $_POST['teamShortName'];} ?>'>
 							</div>
 							
 						</div>
