@@ -45,11 +45,13 @@
                   <thead class="thead-dark">
                     <tr>
                       <th>Team Name</th>
+                      <th>Short Name</th>
                     </tr>
                   </thead>
                   <tfoot class="thead-dark">
                     <tr>
                       <th>Team Name</th>
+                      <th>Short Name</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -63,6 +65,7 @@
                         {
                           echo '<tr>';
                           echo '<td>' . $row['teamName'] . '</td>';
+                          echo '<td>' . $row['teamShortName'] . '</td>';
                           echo '</tr>';
                         }
                       }
